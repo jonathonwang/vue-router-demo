@@ -1,0 +1,50 @@
+// Settings
+// Adjust these to your liking
+// List by largest to smallest ( Note that Classes must be wrapped in quotes )
+// $typography: '.jumbo','.mega','.kilo', h1, h2, h3, h4, h5, h6, p;
+$typography: '.jumbo','.mega','.kilo', h1, h2, h3, h4, h5, h6, p;
+$small-typography: '.milli', '.micro';
+$base-font-size: 14px;
+$modularscale: 1.25;
+$font-units: rem;
+$global-line-height: 1.5;
+$font: 'Raleway', 'Helvetica Neue', 'Helvetica', arial, sans-serif;
+// Settings *
+
+:root{
+    font-size: $base-font-size;
+    line-height: $global-line-height;
+}
+
+/* Modular Scale Loop */
+@each $type in $typography{
+    $exponent: length($typography) - ( index($typography,$type) - 1 );
+    $newScale: math-pow($modularscale,$exponent) + $font-units;
+    #{$type}{
+        margin: 0px;
+        line-height: $global-line-height;
+        font-family: $font;
+        @if($newScale != 1 + $font-units){
+            font-size: $newScale;
+        }
+        @else{
+            font-size: $modularscale + $font-units;
+        }
+    }
+}
+
+/* Smaller Modular Scale Loop */
+/* This Loop uses negative Exponents */
+@each $smalltype in $small-typography{
+    $exponent: ( length($small-typography) - length($small-typography) ) - ( index($small-typography,$smalltype) );
+    $newScale: math-pow($modularscale,$exponent) + $font-units;
+    #{$smalltype}{
+        font-size: $newScale;
+    }
+}
+/* Find a Way to combine these loops. */
+
+/* Styles such as Color and Overriding Styles */
+p{
+    color: darken($brand-primary, 50%);
+}

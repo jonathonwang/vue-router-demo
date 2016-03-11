@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vue-Router Test</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,600,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="dist/css/app.css">
+
+  </head>
+
+  <body id="vue-container">
+
+    <navbar></navbar>
+
+    <div class="container">
+      <router-view transition="slide">
+        <!--
+          This is where all page components
+          will be displayed from hitting routes
+        -->
+      </router-view>
+    </div>
+
+
+    <!-- Scripts -->
+    <script src="dist/js/vendor.js"></script>
+    <script src="dist/js/scripts.js"></script>
+  </body>
+</html>

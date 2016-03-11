@@ -1,0 +1,51 @@
+.btn-check,
+.btn-uncheck {
+  width: 30px;
+  height: 30px;
+  padding-right: 0;
+  padding-left: 0;
+  margin-right: 20px;
+  border-radius: 100px;
+}
+.btn-uncheck {
+  padding-top: 3px;
+}
+
+.edit,
+.delete {
+  opacity: 0;
+  transition: .25s ease all;
+}
+
+.edit {
+  margin-right: 5px;
+}
+.btn-play,
+.btn-pause {
+  color: $light-grey;
+  opacity: 0;
+  transition: .5s ease all;
+}
+.btn-play {
+  margin-left: 5px;
+}
+
+$button-colors: (
+  info: $blue,
+  success: $green,
+  warning: $yellow,
+  danger: $red,
+  complete: lighten($light-grey, 5%)
+);
+
+@each $key, $color in $button-colors {
+  .btn--outline--#{$key} {
+    color: $color;
+    border: 1px solid $color;
+
+    &:hover {
+      color: darken($color, 15%);
+      border: 1px solid darken($color, 15%);
+    }
+  }
+}

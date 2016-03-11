@@ -1,0 +1,12 @@
+.slide-transition {
+  transition: all .5s ease;
+  overflow: hidden;
+}
+
+/* .expand-enter defines the starting state for entering */
+/* .expand-leave defines the ending state for leaving */
+.slide-enter, .slide-leave {
+  height: 0;
+  opacity: 0;
+  padding: 0;
+}

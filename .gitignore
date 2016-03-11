@@ -1,0 +1,12 @@
+# Package Folders
+bower_components
+node_modules
+vendor
+
+# OS or Editor Folders
+.DS_Store
+.cache
+Thumbs.db
+
+# Cache Directories
+.sass-cache
